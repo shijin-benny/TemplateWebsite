@@ -605,7 +605,7 @@ function checkplace1(){
   }
   function checkmessage1(){
     let messagevalue = $("#message").val()
-    let messageRegex =/^[a-zA-Z0-9_.-]*$/
+    let messageRegex =/^[-a-zA-Z-()]+(\s+[-a-zA-Z-()]+)*$/;
      if (messagevalue=="") {
       $("#error5").html("Enter Something!")
     }
@@ -614,7 +614,7 @@ function checkplace1(){
       $("#error5").html("")      
     }
     else{
-      $("#error5").html("Enter message!")
+      $("#error5").html("")
       checkmessage=false
     }
     
