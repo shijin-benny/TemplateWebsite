@@ -605,7 +605,7 @@ function checkplace1(){
   }
   function checkmessage1(){
     let messagevalue = $("#message").val()
-    let messageRegex =/[0-9]{10}/;
+    let messageRegex =/^[a-zA-Z0-9_.-]*$/
      if (messagevalue=="") {
       $("#error5").html("Enter Something!")
     }
@@ -643,7 +643,7 @@ $(document).ready(function(){
 });
 $("#submit-form").submit((e) => {
             e.preventDefault()
-            if (checkname && checkemail && checkplace && checkphone && checkmessage) {
+            if (checkname && checkemail && checkplace && checkphone) {
                 $.ajax({
                     url: "https://script.google.com/macros/s/AKfycbwMugiBOIJbLeAyNMM_sYiDDmYOz6P61H7ajIqrKpHIVnuqR1hbBV79dM46T46d2Vei/exec",
                     data: $("#submit-form").serialize(),
@@ -665,6 +665,7 @@ $("#submit-form").submit((e) => {
                 checkphone1()
                 checkplace1()
                 checkmessage1()
+
                 
             }
         })
